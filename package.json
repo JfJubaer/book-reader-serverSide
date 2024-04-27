@@ -1,5 +1,5 @@
 {
-  "name": "assignment-3",
+  "name": "book-reader-server",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.ts",

@@ -46,19 +46,19 @@ const getOneUser: RequestHandler = catchAsync(
   },
 );
 
-const updateOneUser: RequestHandler = catchAsync(
-  async (req: Request, res: Response) => {
-    const id = req.params.id;
-    const updatedData = req.body;
-    const result = await UserService.updateOneUserFromDB(id, updatedData);
-    sendResponse<IUser>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'User updated successfully',
-      data: result,
-    });
-  },
-);
+// const updateOneUser: RequestHandler = catchAsync(
+//   async (req: Request, res: Response) => {
+//     const id = req.params.id;
+//     const updatedData = req.body;
+//     const result = await UserService.updateOneUserFromDB(id, updatedData);
+//     sendResponse<IUser>(res, {
+//       statusCode: httpStatus.OK,
+//       success: true,
+//       message: 'User updated successfully',
+//       data: result,
+//     });
+//   },
+// );
 
 const deleteOneUser: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
@@ -77,6 +77,6 @@ export const UserController = {
   createUser,
   getAllusers,
   getOneUser,
-  updateOneUser,
+  // updateOneUser,
   deleteOneUser,
 };
