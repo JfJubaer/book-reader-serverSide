@@ -6,10 +6,10 @@ export type IUser = {
 };
 
 export type UserModel = {
-  // isUserExist(
-  //   // eslint-disable-next-line no-unused-vars
-  //   phoneNumber: string,
-  // ): Promise<Pick<IUser, '_id' | 'role' | 'password'>>;
+  isUserExist(
+    // eslint-disable-next-line no-unused-vars
+    phoneNumber: string,
+  ): Promise<Pick<IUser, 'email' | 'password'>>;
   isPasswordMatched(
     // eslint-disable-next-line no-unused-vars
     givenPassword: string,

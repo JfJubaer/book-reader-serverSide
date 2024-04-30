@@ -23,18 +23,16 @@ const userSchema = new Schema<IUser, UserModel>(
 );
 
 userSchema.statics.isUserExist = async function (
-  phoneNumber: string,
+  email: string,
 ): Promise<IUser | null> {
-  return await User.findOne(
-    { phoneNumber },
-    { phoneNumber: 1, password: 1, role: 1, _id: 1 },
-  );
+  return await User.findOne({ email }, { email: 1, password: 1 });
 };
 
 userSchema.statics.isPasswordMatched = async function (
   givenPassword: string,
   savedPassword: string,
 ): Promise<boolean> {
+  console.log(givenPassword, savedPassword);
   return await bcrypt.compare(givenPassword, savedPassword);
 };
 

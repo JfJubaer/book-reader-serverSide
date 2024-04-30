@@ -2,6 +2,7 @@ import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
 import { UserValidation } from './user.validation';
 import { UserController } from './user.controller';
+import { AuthController } from '../auth/auth.controller';
 const router = express.Router();
 
 router.post(
@@ -15,6 +16,8 @@ router.get(
   //  auth(ENUM_USER_ROLE.ADMIN),
   UserController.getOneUser,
 );
+
+router.post('/login', AuthController.loginUser);
 
 // router.delete('/:id',
 // //  auth(ENUM_USER_ROLE.ADMIN),
